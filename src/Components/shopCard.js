@@ -1,14 +1,19 @@
 import React from 'react'
+import {GrFormAdd, GrFormSubtract} from "react-icons/gr"
 
-const shopCard = ({title, desc, price}) => {
+const ShopCard = ({title, price, desc, img}) => {
   return (
     <>
-        <div className='flex flex-col gap-10 items-center'>
+        <div className='w-[20vw] h-[50vh] border-2 border-black '>
             {/* img */}
-            <div></div>
+            <div >
+               <img src={img} alt={img} /> 
+            </div>
 
             {/* desc */}
-            <div className='flex flex-col gap-8'>
+
+
+            <div className='flex flex-col gap-4 p-4'>
                 {/* title */}
 
 
@@ -18,15 +23,26 @@ const shopCard = ({title, desc, price}) => {
 
 
                 {/* details */}
-                <div>
+                <div className="text-base">
                     <p>{desc}</p>
                 </div>
 
 
                 {/* price and quantity */}
-                <div>
+                <div className='flex justify-between text-xl font-bold'>
                     <div>{price}</div>
-                    <div></div>
+                    <div className='flex gap-2'>
+                    <button>
+                            <GrFormSubtract/>
+                        </button>
+                        <p>
+                            0
+                        </p>
+
+                        <button>
+                            <GrFormAdd/>
+                        </button>
+                    </div>
                 </div>
 
 
@@ -38,4 +54,4 @@ const shopCard = ({title, desc, price}) => {
   )
 }
 
-export default shopCard
+export default ShopCard
